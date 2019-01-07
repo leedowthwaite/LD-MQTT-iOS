@@ -12,9 +12,13 @@ import MQTTClient
 // This MQTT client lib is a bit confusing in terms of what callbacks etc to use. The best example I found that works is here:
 // https://github.com/novastone-media/MQTT-Client-Framework/blob/master/MQTTSwift/MQTTSwift/MQTTSwift.swift
 
-class ViewController: UIViewController {
+class ClientViewController: UIViewController {
 
+    let MQTT_HOST = "mqtt-server" // or IP address e.g. "192.168.0.194"
+    let MQTT_PORT: UInt32 = 1883
+    
     @IBOutlet private weak var button: UIButton!
+    @IBOutlet private weak var statusLabel: UILabel!
     
     private var transport = MQTTCFSocketTransport()
     fileprivate var session = MQTTSession()
@@ -22,19 +26,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
+        
         self.session?.delegate = self
-        self.transport.host = "192.168.0.194"
-        self.transport.port = 1883
+        self.transport.host = MQTT_HOST
+        self.transport.port = MQTT_PORT
         session?.transport = transport
-        session?.connect() { error in 
-            print("connected")
 
-            self.session?.subscribe(toTopic: "test/message", at: .exactlyOnce) { error, result in
-                print("subscribe result error \(error) result \(result!)")
+        self.statusLabel.text = "Trying to connect..."
+        try session?.connect() { error in
+            print("connection completed with status \(String(describing: error))")
+            if error != nil {
+                self.statusLabel.text = "Connected"
+                self.session?.subscribe(toTopic: "test/message", at: .exactlyOnce) { error, result in
+                    print("subscribe result error \(String(describing: error)) result \(result!)")
+                }
+            } else {
+                self.statusLabel.text = "Connection Failed"
             }
         }
+        print("finished")
     }
     
     private func publishMessage(_ message: String, onTopic: String) {
@@ -56,7 +66,7 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController: MQTTSessionManagerDelegate, MQTTSessionDelegate {
+extension ClientViewController: MQTTSessionManagerDelegate, MQTTSessionDelegate {
 
     /** gets called when a new message was received
      @param session the MQTTSession reporting the new message
@@ -68,7 +78,7 @@ extension ViewController: MQTTSessionManagerDelegate, MQTTSessionDelegate {
      */
     func newMessage(_ session: MQTTSession!, data: Data!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
         if let msg = String(data: data, encoding: .utf8) {
-            print("topic \(topic), msg \(msg)")
+            print("topic \(topic!), msg \(msg)")
         }
     }
 
