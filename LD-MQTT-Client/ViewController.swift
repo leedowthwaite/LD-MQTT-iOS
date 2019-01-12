@@ -16,6 +16,7 @@ class ClientViewController: UIViewController {
 
     let MQTT_HOST = "mqtt-server" // or IP address e.g. "192.168.0.194"
     let MQTT_PORT: UInt32 = 1883
+    let CONNECTION_TIMEOUT:TimeInterval = 10
     
     @IBOutlet private weak var button: UIButton!
     @IBOutlet private weak var statusLabel: UILabel!
@@ -31,17 +32,36 @@ class ClientViewController: UIViewController {
         self.transport.host = MQTT_HOST
         self.transport.port = MQTT_PORT
         session?.transport = transport
-
-        self.statusLabel.text = "Trying to connect..."
-        try session?.connect() { error in
+        
+        self.setUIStatus(for: self.session?.status ?? .created)
+        session?.connect() { error in
             print("connection completed with status \(String(describing: error))")
             if error != nil {
-                self.statusLabel.text = "Connected"
                 self.session?.subscribe(toTopic: "test/message", at: .exactlyOnce) { error, result in
                     print("subscribe result error \(String(describing: error)) result \(result!)")
                 }
+                self.setUIStatus(for: self.session?.status ?? .created)
             } else {
-                self.statusLabel.text = "Connection Failed"
+                self.setUIStatus(for: self.session?.status ?? .error)
+            }
+        }
+    }
+    
+    private func setUIStatus(for clientStatus: MQTTSessionStatus) {
+        DispatchQueue.main.async {
+            switch clientStatus {
+                case .connected:
+                    self.statusLabel.text = "Connected"
+                    self.button.isSelected = true
+                    self.button.isEnabled = true
+                case .connecting,
+                     .created:
+                    self.statusLabel.text = "Trying to connect..."
+                    self.button.isEnabled = false
+                default:
+                    self.statusLabel.text = "Connection Failed"
+                    self.button.isSelected = false
+                    self.button.isEnabled = false
             }
         }
     }
@@ -51,6 +71,7 @@ class ClientViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
+        guard session?.status == .connected else { return }
         let state = !sender.isSelected
         sender.isEnabled = false 
         completion = { 
@@ -60,10 +81,7 @@ class ClientViewController: UIViewController {
         print("setting state to \(state)")
         publishMessage(state ? "on" : "off", onTopic: "test/message")
     }
-
 }
-
-
 
 extension ClientViewController: MQTTSessionManagerDelegate, MQTTSessionDelegate {
 
