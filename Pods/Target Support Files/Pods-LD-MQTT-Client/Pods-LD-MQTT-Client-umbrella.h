@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MQTT_TestVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MQTT_TestVersionString[];
+FOUNDATION_EXPORT double Pods_LD_MQTT_ClientVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_LD_MQTT_ClientVersionString[];
 

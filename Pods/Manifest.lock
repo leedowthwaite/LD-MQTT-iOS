@@ -11,9 +11,13 @@ PODS:
 DEPENDENCIES:
   - MQTTClient
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MQTTClient
+
 SPEC CHECKSUMS:
   MQTTClient: eea2eaaa6ddef852a1019a4dda091e22ad928b58
 
-PODFILE CHECKSUM: e36bd7270cc2035749e6ebc2beab688efe7aeef6
+PODFILE CHECKSUM: e57f9294f08c9c011adc811f3a088d42bb6a38f6
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

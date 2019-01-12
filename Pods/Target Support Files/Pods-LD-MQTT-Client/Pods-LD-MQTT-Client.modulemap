@@ -1,0 +1,6 @@
+framework module Pods_LD_MQTT_Client {
+  umbrella header "Pods-LD-MQTT-Client-umbrella.h"
+
+  export *
+  module * { export * }
+}

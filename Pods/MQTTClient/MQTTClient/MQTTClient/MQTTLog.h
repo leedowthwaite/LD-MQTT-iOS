@@ -76,7 +76,7 @@ DDLogLevelVerbose   = (DDLogLevelDebug   | DDLogFlagVerbose),
  */
 DDLogLevelAll       = NSUIntegerMax
 };
-/*
+
 #ifdef DEBUG
 
 #define DDLogVerbose if (ddLogLevel & DDLogFlagVerbose) NSLog
@@ -86,7 +86,6 @@ DDLogLevelAll       = NSUIntegerMax
 #define DDLogError if (ddLogLevel & DDLogFlagError) NSLog
 
 #else
-*/
 
 #define DDLogVerbose(...)
 #define DDLogDebug(...)
@@ -94,8 +93,7 @@ DDLogLevelAll       = NSUIntegerMax
 #define DDLogInfo(...)
 #define DDLogError(...)
 
-//#endif /* DEBUG */
-
+#endif /* DEBUG */
 #endif /* LUMBERJACK */
 
 extern DDLogLevel ddLogLevel;

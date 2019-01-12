@@ -7,25 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		642D2AB0375C2A5B56EAC908 /* Pods_MQTT_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFF4FD7A2FCC010C2CC67BA /* Pods_MQTT_Test.framework */; };
-		9B873ABB21D7AC9100970EED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B873ABA21D7AC9100970EED /* AppDelegate.swift */; };
-		9B873ABD21D7AC9100970EED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B873ABC21D7AC9100970EED /* ViewController.swift */; };
-		9B873AC021D7AC9100970EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B873ABE21D7AC9100970EED /* Main.storyboard */; };
-		9B873AC221D7AC9200970EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B873AC121D7AC9200970EED /* Assets.xcassets */; };
-		9B873AC521D7AC9200970EED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B873AC321D7AC9200970EED /* LaunchScreen.storyboard */; };
+		73CA38D870AEBDD99E6E9E51 /* Pods_LD_MQTT_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CFC1720C3BDAD151F9B587 /* Pods_LD_MQTT_Client.framework */; };
+		9BD316D521EA4E4E006728FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD316CD21EA4E4E006728FD /* ViewController.swift */; };
+		9BD316D621EA4E4E006728FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD316CE21EA4E4E006728FD /* Assets.xcassets */; };
+		9BD316D721EA4E4E006728FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD316CF21EA4E4E006728FD /* LaunchScreen.storyboard */; };
+		9BD316D821EA4E4E006728FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD316D121EA4E4E006728FD /* Main.storyboard */; };
+		9BD316D921EA4E4E006728FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD316D321EA4E4E006728FD /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4EFF4FD7A2FCC010C2CC67BA /* Pods_MQTT_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTT_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F31D0A85AB05C89B9E4C1B0 /* Pods-MQTT-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MQTT-Test/Pods-MQTT-Test.debug.xcconfig"; sourceTree = "<group>"; };
-		8D25D1802682E9293642E5B3 /* Pods-MQTT-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTT-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-MQTT-Test/Pods-MQTT-Test.release.xcconfig"; sourceTree = "<group>"; };
-		9B873AB721D7AC9100970EED /* MQTT-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MQTT-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B873ABA21D7AC9100970EED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B873ABC21D7AC9100970EED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9B873ABF21D7AC9100970EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9B873AC121D7AC9200970EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9B873AC421D7AC9200970EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9B873AC621D7AC9200970EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651F8229687B58CCB85972E9 /* Pods-LD-MQTT-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LD-MQTT-Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LD-MQTT-Client/Pods-LD-MQTT-Client.debug.xcconfig"; sourceTree = "<group>"; };
+		91CFC1720C3BDAD151F9B587 /* Pods_LD_MQTT_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LD_MQTT_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B873AB721D7AC9100970EED /* LD-MQTT-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LD-MQTT-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD316CD21EA4E4E006728FD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9BD316CE21EA4E4E006728FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BD316D021EA4E4E006728FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BD316D221EA4E4E006728FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BD316D321EA4E4E006728FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BD316D421EA4E4E006728FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E16858BBD22C0AD90C4CB9 /* Pods-LD-MQTT-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LD-MQTT-Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-LD-MQTT-Client/Pods-LD-MQTT-Client.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				642D2AB0375C2A5B56EAC908 /* Pods_MQTT_Test.framework in Frameworks */,
+				73CA38D870AEBDD99E6E9E51 /* Pods_LD_MQTT_Client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,8 +44,8 @@
 		1333C83E4341D97C26491A8A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7F31D0A85AB05C89B9E4C1B0 /* Pods-MQTT-Test.debug.xcconfig */,
-				8D25D1802682E9293642E5B3 /* Pods-MQTT-Test.release.xcconfig */,
+				651F8229687B58CCB85972E9 /* Pods-LD-MQTT-Client.debug.xcconfig */,
+				F8E16858BBD22C0AD90C4CB9 /* Pods-LD-MQTT-Client.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -53,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				4EFF4FD7A2FCC010C2CC67BA /* Pods_MQTT_Test.framework */,
+				91CFC1720C3BDAD151F9B587 /* Pods_LD_MQTT_Client.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -60,7 +62,7 @@
 		9B873AAE21D7AC9100970EED = {
 			isa = PBXGroup;
 			children = (
-				9B873AB921D7AC9100970EED /* MQTT-Test */,
+				9BD316CC21EA4E4E006728FD /* LD-MQTT-Client */,
 				9B873AB821D7AC9100970EED /* Products */,
 				1333C83E4341D97C26491A8A /* Pods */,
 				5CD94C7C84E072375F71566B /* Frameworks */,
@@ -70,45 +72,44 @@
 		9B873AB821D7AC9100970EED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B873AB721D7AC9100970EED /* MQTT-Test.app */,
+				9B873AB721D7AC9100970EED /* LD-MQTT-Client.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B873AB921D7AC9100970EED /* MQTT-Test */ = {
+		9BD316CC21EA4E4E006728FD /* LD-MQTT-Client */ = {
 			isa = PBXGroup;
 			children = (
-				9B873ABA21D7AC9100970EED /* AppDelegate.swift */,
-				9B873ABC21D7AC9100970EED /* ViewController.swift */,
-				9B873ABE21D7AC9100970EED /* Main.storyboard */,
-				9B873AC121D7AC9200970EED /* Assets.xcassets */,
-				9B873AC321D7AC9200970EED /* LaunchScreen.storyboard */,
-				9B873AC621D7AC9200970EED /* Info.plist */,
+				9BD316CD21EA4E4E006728FD /* ViewController.swift */,
+				9BD316CE21EA4E4E006728FD /* Assets.xcassets */,
+				9BD316CF21EA4E4E006728FD /* LaunchScreen.storyboard */,
+				9BD316D121EA4E4E006728FD /* Main.storyboard */,
+				9BD316D321EA4E4E006728FD /* AppDelegate.swift */,
+				9BD316D421EA4E4E006728FD /* Info.plist */,
 			);
-			path = "MQTT-Test";
+			path = "LD-MQTT-Client";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B873AB621D7AC9100970EED /* MQTT-Test */ = {
+		9B873AB621D7AC9100970EED /* LD-MQTT-Client */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B873AC921D7AC9200970EED /* Build configuration list for PBXNativeTarget "MQTT-Test" */;
+			buildConfigurationList = 9B873AC921D7AC9200970EED /* Build configuration list for PBXNativeTarget "LD-MQTT-Client" */;
 			buildPhases = (
 				51357FD4414E68429EAB13DB /* [CP] Check Pods Manifest.lock */,
 				9B873AB321D7AC9100970EED /* Sources */,
 				9B873AB421D7AC9100970EED /* Frameworks */,
 				9B873AB521D7AC9100970EED /* Resources */,
 				B01CC08E00373F4DB43E6948 /* [CP] Embed Pods Frameworks */,
-				263CEA8B566E680F8E7E84E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "MQTT-Test";
+			name = "LD-MQTT-Client";
 			productName = "MQTT-Test";
-			productReference = 9B873AB721D7AC9100970EED /* MQTT-Test.app */;
+			productReference = 9B873AB721D7AC9100970EED /* LD-MQTT-Client.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B873AB221D7AC9100970EED /* Build configuration list for PBXProject "MQTT-Test" */;
+			buildConfigurationList = 9B873AB221D7AC9100970EED /* Build configuration list for PBXProject "LD-MQTT-Client" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B873AB621D7AC9100970EED /* MQTT-Test */,
+				9B873AB621D7AC9100970EED /* LD-MQTT-Client */,
 			);
 		};
 /* End PBXProject section */
@@ -149,30 +150,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B873AC521D7AC9200970EED /* LaunchScreen.storyboard in Resources */,
-				9B873AC221D7AC9200970EED /* Assets.xcassets in Resources */,
-				9B873AC021D7AC9100970EED /* Main.storyboard in Resources */,
+				9BD316D821EA4E4E006728FD /* Main.storyboard in Resources */,
+				9BD316D621EA4E4E006728FD /* Assets.xcassets in Resources */,
+				9BD316D721EA4E4E006728FD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		263CEA8B566E680F8E7E84E4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MQTT-Test/Pods-MQTT-Test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		51357FD4414E68429EAB13DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,7 +170,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MQTT-Test-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-LD-MQTT-Client-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -197,7 +183,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MQTT-Test/Pods-MQTT-Test-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LD-MQTT-Client/Pods-LD-MQTT-Client-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -206,7 +192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MQTT-Test/Pods-MQTT-Test-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LD-MQTT-Client/Pods-LD-MQTT-Client-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -216,28 +202,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B873ABD21D7AC9100970EED /* ViewController.swift in Sources */,
-				9B873ABB21D7AC9100970EED /* AppDelegate.swift in Sources */,
+				9BD316D921EA4E4E006728FD /* AppDelegate.swift in Sources */,
+				9BD316D521EA4E4E006728FD /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9B873ABE21D7AC9100970EED /* Main.storyboard */ = {
+		9BD316CF21EA4E4E006728FD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9B873ABF21D7AC9100970EED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9B873AC321D7AC9200970EED /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B873AC421D7AC9200970EED /* Base */,
+				9BD316D021EA4E4E006728FD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9BD316D121EA4E4E006728FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BD316D221EA4E4E006728FD /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -363,17 +349,17 @@
 		};
 		9B873ACA21D7AC9200970EED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F31D0A85AB05C89B9E4C1B0 /* Pods-MQTT-Test.debug.xcconfig */;
+			baseConfigurationReference = 651F8229687B58CCB85972E9 /* Pods-LD-MQTT-Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZV7GKYE837;
-				INFOPLIST_FILE = "MQTT-Test/Info.plist";
+				DEVELOPMENT_TEAM = B7L9TKBSP7;
+				INFOPLIST_FILE = "LD-MQTT-Client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.echelon.MQTT-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.echelon.LD-MQTT-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 4.2;
@@ -383,17 +369,17 @@
 		};
 		9B873ACB21D7AC9200970EED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D25D1802682E9293642E5B3 /* Pods-MQTT-Test.release.xcconfig */;
+			baseConfigurationReference = F8E16858BBD22C0AD90C4CB9 /* Pods-LD-MQTT-Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZV7GKYE837;
-				INFOPLIST_FILE = "MQTT-Test/Info.plist";
+				DEVELOPMENT_TEAM = B7L9TKBSP7;
+				INFOPLIST_FILE = "LD-MQTT-Client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.echelon.MQTT-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.echelon.LD-MQTT-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -403,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B873AB221D7AC9100970EED /* Build configuration list for PBXProject "MQTT-Test" */ = {
+		9B873AB221D7AC9100970EED /* Build configuration list for PBXProject "LD-MQTT-Client" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B873AC721D7AC9200970EED /* Debug */,
@@ -412,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B873AC921D7AC9200970EED /* Build configuration list for PBXNativeTarget "MQTT-Test" */ = {
+		9B873AC921D7AC9200970EED /* Build configuration list for PBXNativeTarget "LD-MQTT-Client" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B873ACA21D7AC9200970EED /* Debug */,

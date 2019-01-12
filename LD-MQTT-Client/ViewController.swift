@@ -44,7 +44,6 @@ class ClientViewController: UIViewController {
                 self.statusLabel.text = "Connection Failed"
             }
         }
-        print("finished")
     }
     
     private func publishMessage(_ message: String, onTopic: String) {
