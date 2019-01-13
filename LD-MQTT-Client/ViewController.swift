@@ -12,12 +12,28 @@ import MQTTClient
 // This MQTT client lib is a bit confusing in terms of what callbacks etc to use. The best example I found that works is here:
 // https://github.com/novastone-media/MQTT-Client-Framework/blob/master/MQTTSwift/MQTTSwift/MQTTSwift.swift
 
+class CircularButton: UIButton {
+
+    override var isSelected: Bool {
+        didSet {
+            self.backgroundColor = isSelected ? .blue : .clear
+        }
+    }
+    
+    override func awakeFromNib() {
+        self.layer.cornerRadius = self.bounds.width * 0.5
+        self.layer.masksToBounds = true
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.blue.cgColor
+    }
+}
+
 class ClientViewController: UIViewController {
 
     let MQTT_HOST = "mqtt-server" // or IP address e.g. "192.168.0.194"
     let MQTT_PORT: UInt32 = 1883
     
-    @IBOutlet private weak var button: UIButton!
+    @IBOutlet private weak var button: CircularButton!
     @IBOutlet private weak var statusLabel: UILabel!
     
     private var transport = MQTTCFSocketTransport()
@@ -42,7 +58,7 @@ class ClientViewController: UIViewController {
             }
         }
     }
-    
+
     private func updateUI(for clientStatus: MQTTSessionStatus) {
         DispatchQueue.main.async {
             switch clientStatus {
