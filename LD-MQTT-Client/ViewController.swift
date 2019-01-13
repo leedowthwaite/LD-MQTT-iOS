@@ -16,7 +16,6 @@ class ClientViewController: UIViewController {
 
     let MQTT_HOST = "mqtt-server" // or IP address e.g. "192.168.0.194"
     let MQTT_PORT: UInt32 = 1883
-    let CONNECTION_TIMEOUT:TimeInterval = 10
     
     @IBOutlet private weak var button: UIButton!
     @IBOutlet private weak var statusLabel: UILabel!
@@ -33,26 +32,22 @@ class ClientViewController: UIViewController {
         self.transport.port = MQTT_PORT
         session?.transport = transport
         
-        self.setUIStatus(for: self.session?.status ?? .created)
+        updateUI(for: self.session?.status ?? .created)
         session?.connect() { error in
             print("connection completed with status \(String(describing: error))")
             if error != nil {
-                self.session?.subscribe(toTopic: "test/message", at: .exactlyOnce) { error, result in
-                    print("subscribe result error \(String(describing: error)) result \(result!)")
-                }
-                self.setUIStatus(for: self.session?.status ?? .created)
+                self.updateUI(for: self.session?.status ?? .created)
             } else {
-                self.setUIStatus(for: self.session?.status ?? .error)
+                self.updateUI(for: self.session?.status ?? .error)
             }
         }
     }
     
-    private func setUIStatus(for clientStatus: MQTTSessionStatus) {
+    private func updateUI(for clientStatus: MQTTSessionStatus) {
         DispatchQueue.main.async {
             switch clientStatus {
                 case .connected:
                     self.statusLabel.text = "Connected"
-                    self.button.isSelected = true
                     self.button.isEnabled = true
                 case .connecting,
                      .created:
@@ -65,13 +60,22 @@ class ClientViewController: UIViewController {
             }
         }
     }
+
+    private func subscribe() {
+        self.session?.subscribe(toTopic: "test/message", at: .exactlyOnce) { error, result in
+            print("subscribe result error \(String(describing: error)) result \(result!)")
+        }
+    }
     
-    private func publishMessage(_ message: String, onTopic: String) {
-        session?.publishData(message.data(using: .utf8, allowLossyConversion: false), onTopic: "test/message", retain: false, qos: .exactlyOnce)
+    private func publishMessage(_ message: String, onTopic topic: String) {
+        session?.publishData(message.data(using: .utf8, allowLossyConversion: false), onTopic: topic, retain: false, qos: .exactlyOnce)
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
-        guard session?.status == .connected else { return }
+        guard session?.status == .connected else {
+            self.updateUI(for: self.session?.status ?? .error)
+            return 
+        }
         let state = !sender.isSelected
         sender.isEnabled = false 
         completion = { 
@@ -85,30 +89,16 @@ class ClientViewController: UIViewController {
 
 extension ClientViewController: MQTTSessionManagerDelegate, MQTTSessionDelegate {
 
-    /** gets called when a new message was received
-     @param session the MQTTSession reporting the new message
-     @param data the data received, might be zero length
-     @param topic the topic the data was published to
-     @param qos the qos of the message
-     @param retained indicates if the data retransmitted from server storage
-     @param mid the Message Identifier of the message if qos = 1 or 2, zero otherwise
-     */
     func newMessage(_ session: MQTTSession!, data: Data!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
         if let msg = String(data: data, encoding: .utf8) {
             print("topic \(topic!), msg \(msg)")
         }
     }
 
-    /** gets called when a published message was actually delivered
-     @param session the MQTTSession reporting the delivery
-     @param msgID the Message Identifier of the delivered message
-     @note this method is called after a publish with qos 1 or 2 only
-     */
     func messageDelivered(_ session: MQTTSession, msgID msgId: UInt16) {
         print("delivered")
         DispatchQueue.main.async {
             self.completion?()
         }
     }
-
 }
